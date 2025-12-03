@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANS Ads – Login / Signup</title>
+
+    <link rel="stylesheet" href="auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Boxicons -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <style>
+        /* BACKGROUND VIDEO */
+        video.bg-video {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            opacity: .25;
+            z-index: 0;
+        }
+
+        /* LOGO */
+        .auth-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 30;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 26px;
+            font-weight: 800;
+            color: #fff;
+        }
+        .auth-logo-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: conic-gradient(from 210deg,#60a5fa,#a855f7,#ec4899);
+            box-shadow: 0 8px 24px rgba(168,85,247,.35);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- BACKGROUND VIDEO -->
+    <video class="bg-video" autoplay muted loop>
+        <source src="videos/after_hero_bg.mp4" type="video/mp4">
+    </video>
+
+    <!-- LOGO -->
+    <a href="index.html" class="auth-logo-link">
+        <div class="auth-logo">
+            <div class="auth-logo-box">
+                <img src="images/logo.png" alt="ANS Ads Logo">
+            </div>
+            <span>ANS Ads</span>
+        </div>
+    </a>
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+
+        <div class="curved-shape"></div>
+        <div class="curved-shape2"></div>
+
+        <!-- LOGIN -->
+        <div class="form-box Login">
+
+            <h2 class="animation" style="--D:0; --S:21">Login</h2>
+
+            <form>
+
+                <div class="input-box animation" style="--D:1; --S:22">
+                    <input type="email" required>
+                    <label>Email</label>
+                    <box-icon name='envelope' type='solid' color="#cbd5e1"></box-icon>
+                </div>
+
+                <div class="input-box animation" style="--D:2; --S:23">
+                    <input type="password" required minlength="6">
+                    <label>Password</label>
+                    <box-icon name='lock-alt' type='solid' color="#cbd5e1"></box-icon>
+                </div>
+
+                <div class="input-box animation" style="--D:3; --S:24">
+                    <button class="btn" type="submit">Login</button>
+                </div>
+
+                
+
+                <div class="regi-link animation" style="--D:4; --S:25">
+                    <p>Don't have an account? <br>
+                        <a class="SignUpLink">Sign Up</a>
+                    </p>
+                </div>
+            </form>
+
+        </div>
+
+        <!-- LOGIN RIGHT TEXT -->
+        <div class="info-content Login">
+            <h2 class="animation" style="--D:0; --S:20">WELCOME BACK!</h2>
+            <p class="animation" style="--D:1; --S:21">
+                We're glad to see you again. Power your revenue with ANS Ads.
+            </p>
+        </div>
+
+        <!-- REGISTER BOX -->
+        <div class="form-box Register">
+
+            <h2 class="animation" style="--li:17; --S:0">Register</h2>
+
+            <form>
+
+                <div class="input-box animation" style="--li:18; --S:1">
+                    <input type="text" required minlength="3">
+                    <label>Username</label>
+                    <box-icon name='user' type='solid' color="#cbd5e1"></box-icon>
+                </div>
+
+                <div class="input-box animation" style="--li:19; --S:2">
+                    <input type="email" required>
+                    <label>Email</label>
+                    <box-icon name='envelope' type='solid' color="#cbd5e1"></box-icon>
+                </div>
+
+                <div class="input-box animation" style="--li:19; --S:3">
+                    <input type="password" required minlength="6">
+                    <label>Password</label>
+                    <box-icon name='lock-alt' type='solid' color="#cbd5e1"></box-icon>
+                </div>
+
+                <div class="input-box animation" style="--li:20; --S:4">
+                    <button class="btn" type="submit">Register</button>
+                </div>
+
+                <div class="regi-link animation" style="--li:21; --S:5">
+                    <p>Already have an account? <br>
+                        <a class="SignInLink">Sign In</a>
+                    </p>
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- REGISTER LEFT TEXT -->
+        <div class="info-content Register">
+            <h2 class="animation" style="--li:17; --S:0">WELCOME!</h2>
+            <p class="animation" style="--li:18; --S:1">
+                Join ANS Ads and start scaling your revenue with smart advertising.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- JS: SWITCH ANIMATIONS -->
+    <script>
+        const container = document.querySelector('.container');
+        const LoginLink = document.querySelector('.SignInLink');
+        const RegisterLink = document.querySelector('.SignUpLink');
+
+        RegisterLink.addEventListener('click', () =>{
+            container.classList.add('active');
+        });
+
+        LoginLink.addEventListener('click', () => {
+            container.classList.remove('active');
+        });
+        RegisterLink.addEventListener('click', (e) => {
+          e.preventDefault && e.preventDefault();
+          container.classList.add('active');
+          window.scrollTo({ top: document.querySelector('.container').offsetTop - 12, behavior: 'smooth' });
+        });
+
+        LoginLink.addEventListener('click', (e) => {
+          e.preventDefault && e.preventDefault();
+          container.classList.remove('active');
+          window.scrollTo({ top: document.querySelector('.container').offsetTop - 12, behavior: 'smooth' });
+        });
+
+  // prevent default form submit during testing (remove when hooking backend)
+        document.querySelectorAll('.container form').forEach(f => {
+          f.addEventListener('submit', e => {
+            e.preventDefault();
+      // Add feedback later (spinner / success). For now we just prevent navigation.
+            f.querySelector('.btn')?.blur();
+          });
+        });
+    </script>
+
+</body>
+</html>

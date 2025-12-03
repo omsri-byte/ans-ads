@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    /* ANS Ads Background */
+    background: radial-gradient(1000px at 10% 0%, rgba(96,165,250,.25), transparent 60%),
+                radial-gradient(900px at 90% 20%, rgba(168,85,247,.25), transparent 60%),
+                linear-gradient(135deg, #0f172a 0%, #1a1030 60%, #0f172a 100%);
+}
+
+/* ===== CONTAINER ===== */
+.container{
+    position: relative;
+    width: 750px;
+    height: 450px;
+
+    /* REPLACED ORANGE WITH GRADIENT BORDER */
+    border: 2px solid #a855f7;
+    box-shadow: 0 0 25px rgba(168,85,247,.7);
+
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* ===== FORM BOX ===== */
+.container .form-box{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-box.Login{
+    left: 0;
+    padding: 0 40px;
+}
+
+.form-box.Login .animation{
+    transform: translateX(0%);
+    transition: .7s;
+    opacity: 1;
+    transition-delay: calc(.1s * var(--S));
+}
+
+.container.active .form-box.Login .animation{
+    transform: translateX(-120%);
+    opacity: 0;
+    transition-delay: calc(.1s * var(--D));
+}
+
+/* REGISTER FORM */
+.form-box.Register{
+    right: 0;
+    padding: 0 60px;
+
+}
+
+.form-box.Register .animation{
+    transform: translateX(120%);
+    transition: .7s ease;
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--S));
+}
+
+.container.active .form-box.Register .animation{
+    transform: translateX(0%);
+    opacity: 1;
+    filter: blur(0px);
+    transition-delay: calc(.1s * var(--li));
+}
+
+.form-box h2{
+    font-size: 32px;
+    text-align: center;
+}
+
+/* ===== INPUT BOX ===== */
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-top: 25px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 2px solid #fff;
+    padding-right: 23px;
+    transition: .5s;
+}
+
+/* FOCUS COLOR CHANGED TO GRADIENT */
+.input-box input:focus,
+.input-box input:valid{
+    border-bottom: 2px solid #a855f7;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #fff;
+    transition: .5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label{
+    top: -5px;
+    color: #60a5fa;
+}
+
+.input-box box-icon{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 18px;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.input-box input:focus ~ box-icon,
+.input-box input:valid ~ box-icon{
+    color: #60a5fa;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+
+    /* GRADIENT BORDER */
+    border: 2px solid #a855f7;
+    overflow: hidden;
+    z-index: 1;    
+    position: relative;
+}
+
+/* BUTTON HOVER GRADIENT SWIPE */
+.btn::before{
+    content: "";
+    position: absolute;
+    height: 300%;
+    width: 100%;
+    background: linear-gradient(#0f172a, #a855f7, #ec4899, #60a5fa);
+    top: -100%;
+    left: 0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn:hover:before{
+    top: 0;
+}
+
+/* Links */
+.regi-link{
+    font-size: 14px;
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.regi-link a{
+    text-decoration: none;
+
+    /* LINK COLOR UPDATED */
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.regi-link a:hover{
+    text-decoration: underline;
+}
+
+/* ===== INFO TEXT ===== */
+.info-content{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.info-content.Login{
+    right: 0;
+    text-align: right;
+    padding: 0 40px 60px 150px;
+}
+
+.info-content.Login .animation{
+    transform: translateX(0);
+    transition: .7s ease;
+    opacity: 1;
+    filter: blur(0px);
+    transition-delay: calc(.1s * var(--S));
+}
+
+.container.active .info-content.Login .animation{
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--D));
+}
+
+.info-content.Register{
+    left: 0;
+    text-align: left;
+    padding: 0 150px 60px 38px;
+    pointer-events: none;
+}
+
+.info-content.Register .animation{
+    transform: translateX(-120%);
+    opacity: 1;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--S));
+}
+
+.container.active .info-content.Register .animation{
+    transform: translateX(0%);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--li));
+}
+
+/* Headings */
+.info-content h2{
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 1.3;
+}
+
+/* Animated shapes — UPDATED COLORS */
+.container .curved-shape{
+    position: absolute;
+    right: 0;
+    top: -5px;
+    height: 600px;
+    width: 850px;
+
+    background: linear-gradient(45deg, #0f172a, #a855f7);
+    transform: rotate(10deg) skewY(40deg);
+    transform-origin: bottom right;
+    transition: 1.5s ease;
+    transition-delay: 1.6s;
+}
+
+.container.active .curved-shape{
+    transform: rotate(0deg) skewY(0deg);
+    transition-delay: .5s;
+}
+
+.container .curved-shape2{
+    position: absolute;
+    left: 250px;
+    top: 100%;
+    height: 700px;
+    width: 850px;
+    background:  #0f172a;
+    
+
+    border-top: 3px solid #a855f7;
+    transform: rotate(0deg) skewY(0deg);
+    transform-origin: bottom left;
+    transition: 1.5s ease;
+    transition-delay: .5s;
+}
+
+.container.active .curved-shape2{
+    transform: rotate(-11deg) skewY(-41deg);
+    transition-delay: 1.2s;
+}
+/* AUTH LOGO */
+.auth-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+}
+
+/* Icon box (same style as navbar) */
+.auth-logo-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 8px 22px rgba(168,85,247,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo image */
+.auth-logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* MOBILE FIX */
+@media (max-width: 720px) {
+    .auth-logo {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+}
+
+/* -----------------------------
+   RESPONSIVE: PERFECT MOBILE UI
+   Paste this at the end of auth.css
+   ----------------------------- */
+@media (max-width: 900px) {
+  /* make container fluid + taller, like card on mobile */
+  .container{
+    width: calc(100% - 32px);
+    max-width: 720px;
+    height: auto;
+    padding: 20px;
+    margin: 18px auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45), 0 0 24px rgba(168,85,247,0.14);
+    overflow: visible;
+    border: 2px solid rgba(168,85,247,0.9);
+    display: block;
+  }
+
+  /* hide the large diagonal shapes to save room */
+  .container .curved-shape,
+  .container .curved-shape2 {
+    display: none !important;
+  }
+
+  /* stack everything vertically and remove absolute positioning */
+  .container .form-box,
+  .container .info-content {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 12px 6px !important;
+    display: block !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  /* show only the active form — toggle via .container.active */
+  .form-box.Login  { display: block !important; }
+  .form-box.Register { display: none !important; }
+
+  .container.active .form-box.Login  { display: none !important; }
+  .container.active .form-box.Register { display: block !important; }
+
+  /* hide the big info text on the side — keep it below forms and smaller */
+  .info-content { display: none; } /* optionally show below if you prefer */
+
+  /* headings */
+  .form-box h2 {
+    font-size: 28px;
+    text-align: left;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+
+  /* tighten input spacing and make inputs look like pills */
+  .input-box{
+    margin-top: 18px;
+    height: auto;
+  }
+
+  .input-box input{
+    border: 0;
+    outline: none;
+    width: 100%;
+    padding: 14px 44px 14px 14px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: none;
+    transition: box-shadow .18s, transform .18s;
+  }
+
+  /* label treated as placeholder above input for mobile */
+  .input-box label{
+    position: relative;
+    transform: none;
+    top: 0;
+    left: 0;
+    color: rgba(203,213,225,0.9);
+    font-size: 13px;
+    margin-bottom: 6px;
+    display: block;
+    pointer-events: none;
+    padding-left: 4px;
+  }
+
+  /* put the icons absolutely to the right inside the input box */
+  .input-box box-icon,
+  .input-box .bx {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: rgba(203,213,225,0.9);
+    z-index: 2;
+  }
+
+  /* make primary buttons big and touch-friendly */
+  .btn {
+    width: 100% !important;
+    height: 54px !important;
+    font-size: 16px !important;
+    border-radius: 28px !important;
+    margin-top: 16px;
+    display: inline-block;
+  }
+
+  .btn::before { /* keep swipe effect but slower on mobile */
+    transition: .45s;
+  }
+
+  /* center the Sign links */
+  .regi-link { text-align: center; margin: 16px 0; font-size: 14px; }
+  .regi-link a { display: inline-block; padding: 6px 0; }
+
+  /* reduce big heading styles used in info area (if later shown) */
+  .info-content h2 { font-size: 20px; margin-top: 10px; }
+  .info-content p { font-size: 14px; line-height: 1.5; color: rgba(203,213,225,0.95); }
+
+  /* make logo slightly smaller and reposition */
+  .auth-logo { left: 14px; top: 10px; gap: 10px; font-size: 20px; }
+  .auth-logo-icon { width: 34px; height: 34px; border-radius: 10px; }
+
+  /* background video should still fill but be less opaque on mobile */
+  video.bg-video { object-fit: cover; opacity: .22; }
+
+  /* keep container centered on very small screens */
+  @media (max-width: 420px) {
+    .container { width: calc(100% - 24px); padding: 16px; border-radius: 14px; }
+    .form-box h2 { font-size: 24px; }
+    .btn { height: 50px; font-size: 15px; }
+    .input-box input { padding: 12px 40px 12px 12px; font-size: 15px; }
+    .auth-logo { left: 10px; top: 8px; font-size: 18px; }
+    .auth-logo-icon { width:30px; height:30px; }
+  }
+}
+
+/* small UX polish: keep keyboard from pushing layout weirdly on iOS/Android */
+html, body {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ensure boxicons don't overflow mobile */
+box-icon, .bx {
+  max-width: 28px;
+  max-height: 28px;
+}

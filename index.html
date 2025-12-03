@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>ANS Ads — Grow With Performance</title>
+  <meta name="description" content="ANS Ads is a performance-first ad agency helping publishers and brands grow with programmatic, search, and social." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Your external CSS (keep this file) -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" aria-label="Primary">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo-box">
+          <img src="images/logo.png" alt="ANS Ads Logo" />
+        </div>
+        <span style="color:#a855f7;">ANS Ads</span>
+      </div>
+
+      <ul class="menu" id="menu">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#who">Who we are</a></li>
+        <li><a href="#formats">Ad types</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#why">Why us</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="auth.html" class="btn-outline">Login</a>
+        <button class="burger" id="burger" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-panel" id="mobile-panel">
+      <div class="mobile-menu">
+        <a href="#home">Home</a>
+        <a href="#who">Who we are</a>
+        <a href="#products">Products</a>
+        <a href="#formats">Ad types</a>
+        <a href="#why">Why us</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="auth.html">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero">
+    <video autoplay muted loop playsinline id="heroVideo">
+      <source src="videos/hero_bg.mp4" type="video/mp4" />
+    </video>
+
+    <div class="container hero-inner" data-aos="fade-up">
+      <span class="chip">
+        <span style="width:10px;height:10px;border-radius:50%;background:linear-gradient(90deg,var(--brand-1),var(--brand-2));display:inline-block"></span>
+        Welcome to ANS Ads
+      </span>
+
+      <h1 class="heading-xl">
+        Performance-first advertising that 
+        <span style="background:#a855f7;-webkit-background-clip:text;-webkit-text-fill-color:transparent">
+          actually scales
+        </span>
+      </h1>
+
+      <p class="muted" style="max-width:820px;margin:0 auto">
+        We help publishers and brands grow revenue with programmatic optimization, creative that converts, and always-on analytics.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn">Get a free audit</a>
+        <a href="#products" class="btn">Explore products</a>
+      </div>
+
+      <div style="height:24px"></div>
+
+      <div class="partners">
+        <img class="partner" alt="Partner 1" src="images/google.png" />
+        <img class="partner" alt="Partner 2" src="images/meta.png" />
+        <img class="partner" alt="Partner 3" src="images/taboola.png" />
+        <img class="partner" alt="Partner 4" src="images/DV360.png" />
+        <img class="partner" alt="Partner 5" src="images/bing.png" />
+      </div>
+    </div>
+  </header>
+
+  <!-- Background video section (wraps WHO + FORMATS as in your original intent) -->
+  <div class="bg-video-section">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="videos/after_hero_bg.mp4" type="video/mp4">
+    </video>
+
+
+  
+<section id="who" class="section">
+
+  <div class="container who-wrapper fade-up">
+
+    <div class="who-left who-fade-left">
+      <h2 class="who-title">Who<br>We<br>Are</h2>
+    </div>
+    
+    <div class="who-right glass who-fade-right who-carousel">
+
+      <div class="who-stats-left">
+        <div class="stat glass"><div class="num" data-count="500">0</div><div class="lbl">Publishers</div></div>
+        <div class="stat glass"><div class="num" data-count="1200">0</div><div class="lbl">Campaigns</div></div>
+      </div>
+
+      <div class="who-image-box glass">
+        <img id="whoImage" src="images/who1.png" class="who-img">
+      </div>
+
+      <div class="who-stats-right">
+        <div class="stat glass"><div class="num" data-count="38">0</div><div class="lbl">Markets</div></div>
+        <div class="stat glass"><div class="num" data-count="8">0</div><div class="lbl">Years</div></div>
+      </div>
+
+      <div class="who-desc glass">
+        <p id="whoDesc">We help publishers scale ADX/MCM revenue…</p>
+      </div>
+
+      <div class="who-controls">
+        <button class="who-btn who-prev">‹</button>
+        <div class="who-indicator"><span id="whoCounter">1 / 4</span></div>
+        <div class="who-timer">…</div>
+        <button class="who-btn who-next">›</button>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+
+
+    <!-- Ad Types (Neon Underline Timeline — 5s per item) -->
+    <!-- ================= AD TYPES (Option1: middle-scroll triggers) ================= -->
+    <!-- Ad Types (Scroll-Locked Step Navigation) -->
+<section id="formats" class="section">
+  <div class="container">
+
+    <div style="text-align:center" data-aos="fade-up">
+      <h2 class="heading-lg">Ad types we run</h2>
+      <div class="divider"></div>
+      <p class="muted" style="max-width:760px;margin:0 auto">
+        Omni-channel buying with formats tuned to your objective.
+      </p>
+    </div>
+
+    <div style="height:28px"></div>
+
+    <div class="adtypes-wrap">
+
+      <!-- LEFT COLUMN — Selection list -->
+      <ul class="adtypes-list">
+
+        <li class="adtypes-item active" data-key="tbi">
+          <span class="adtypes-title">Tickey Banner Interstitial</span>
+          <div class="adtypes-underline">
+            <div class="adtypes-underline-fill"></div>
+          </div>
+        </li>
+
+        <li class="adtypes-item" data-key="rewarded">
+          <span class="adtypes-title">Rewarded Video Ads</span>
+          <div class="adtypes-underline">
+            <div class="adtypes-underline-fill"></div>
+          </div>
+        </li>
+
+        <li class="adtypes-item" data-key="video">
+          <span class="adtypes-title">Video Ads</span>
+          <div class="adtypes-underline">
+            <div class="adtypes-underline-fill"></div>
+          </div>
+        </li>
+
+        <li class="adtypes-item" data-key="sidebanner">
+          <span class="adtypes-title">Side Banner</span>
+          <div class="adtypes-underline">
+            <div class="adtypes-underline-fill"></div>
+          </div>
+        </li>
+
+      </ul>
+
+      <!-- MIDDLE COLUMN — Main Text -->
+      <!-- RIGHT SIDE — SINGLE CARD -->
+<div class="adtypes-card glass">
+
+  <div class="adtypes-card-image">
+    <img id="adtypesImage" src="images/tbi.png" alt="Ad Type Image" class="enter">
+  </div>
+
+  <div class="adtypes-card-content">
+    <h3 id="adtypesTitle">Tickey Banner Interstitial</h3>
+
+    <p id="adtypesDesc">
+      High-impact fullscreen transitions for awareness. CLS-safe with frequency controls. and many more
+    </p>
+
+    <div class="adtypes-tags" id="adtypesTags"></div>
+  </div>
+
+</div>
+
+
+    </div>
+
+  </div>
+</section>
+
+  </div> <!-- END bg-video-section -->
+
+  <!-- Products -->
+  <section id="products" class="section">
+    <div class="container">
+      <div style="text-align:center" data-aos="fade-up">
+        <h2 class="heading-lg">Products</h2>
+        <div class="divider"></div>
+        <p class="muted" style="max-width:760px;margin:0 auto">
+          Solutions for publishers and advertisers — from strategy to analytics.
+        </p>
+      </div>
+
+      <div style="height:28px"></div>
+
+      <div class="cards">
+        <article class="card" data-aos="zoom-in">
+          <div class="icon"><i></i></div>
+          <h3 class="heading-md">ADX/MCM Optimization</h3>
+          <p class="muted">Floor pricing, header bidding, demand path optimization, and latency control to raise eCPM and fill.</p>
+          <div class="actions"><a href="#contact" class="link">Request a demo <span class="arr">→</span></a></div>
+        </article>
+
+        <article class="card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon" style="background:linear-gradient(135deg,var(--brand-2),var(--brand-3))"><i></i></div>
+          <h3 class="heading-md">Creative Studio</h3>
+          <p class="muted">Thumb-stopping video, UGC, and dynamic display creatives built for CTR and conversion.</p>
+          <div class="actions"><a href="#contact" class="link">See examples <span class="arr">→</span></a></div>
+        </article>
+
+        <article class="card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon" style="background:linear-gradient(135deg,var(--brand-1),var(--accent))"><i></i></div>
+          <h3 class="heading-md">Analytics Suite</h3>
+          <p class="muted">Dashboards, cohort tracking, and experiment frameworks — so decisions are backed by data.</p>
+          <div class="actions"><a href="#contact" class="link">View dashboards <span class="arr">→</span></a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why" class="section">
+    <div class="container">
+      <div style="text-align:center" data-aos="fade-up">
+        <h2 class="heading-lg">Why choose ANS Ads</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div style="height:24px"></div>
+
+      <div class="why">
+        <div class="item" data-aos="fade-up">
+          <h3 class="heading-md">In-house tooling</h3>
+          <p class="muted">
+            From bid shading to floor price testers — we don’t rely on black boxes.
+          </p>
+        </div>
+
+        <div class="item" data-aos="fade-up" data-aos-delay="80">
+          <h3 class="heading-md">Experiment culture</h3>
+          <p class="muted">
+            We test, measure, and iterate. Winners scale fast, losers are paused quicker.
+          </p>
+        </div>
+
+        <div class="item" data-aos="fade-up" data-aos-delay="160">
+          <h3 class="heading-md">Aligned incentives</h3>
+          <p class="muted">
+            Flexible pricing tied to what matters: revenue and profitability.
+          </p>
+        </div>
+      </div>
+
+      <div style="height:22px"></div>
+
+      <div class="cta" data-aos="zoom-in">
+        <div>
+          <h3 class="heading-md">Free account audit</h3>
+          <p class="muted">
+            Get a quick teardown of your stack: demand partners, floors, timeouts, and creative waste.
+          </p>
+
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <a href="#contact" class="btn">Book a call</a>
+            <a href="#blog" class="btn-outline">Read case studies</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <ul class="muted" style="line-height:1.9; padding-left:18px;">
+            <li>No-cost, no commitment</li>
+            <li>Actionable recommendations in 48 hours</li>
+            <li>Publisher or advertiser — both welcome</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="section">
+    <div class="container">
+      <div style="text-align:center" data-aos="fade-up">
+        <h2 class="heading-lg">Blogs</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div style="height:24px"></div>
+
+      <div class="blog">
+        <article class="post" data-aos="fade-up">
+          <div class="thumb" style="background-image:url('images/blog1.png')"></div>
+          <div class="bd">
+            <div class="meta">MARKETING TIPS · 5 min read</div>
+            <h3 class="heading-md">10 levers to lift eCPM</h3>
+            <p class="muted">From ad density to CLS control — where the wins actually are.</p>
+            <div style="margin-top:10px">
+              <a href="#" class="link">Read more <span class="arr">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-aos="fade-up" data-aos-delay="100">
+          <div class="thumb" style="background-image:url('images/blog2.png')"></div>
+          <div class="bd">
+            <div class="meta">INDUSTRY · 7 min read</div>
+            <h3 class="heading-md">Signals after third-party cookies</h3>
+            <p class="muted">Context, first-party, and modeled bidding — what’s working now.</p>
+            <div style="margin-top:10px">
+              <a href="#" class="link">Read more <span class="arr">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="post" data-aos="fade-up" data-aos-delay="200">
+          <div class="thumb" style="background-image:url('images/blog3.png')"></div>
+          <div class="bd">
+            <div class="meta">CASE STUDY · 6 min read</div>
+            <h3 class="heading-md">+38% revenue in 30 days</h3>
+            <p class="muted">How we tuned floors and timeouts for a news publisher.</p>
+            <div style="margin-top:10px">
+              <a href="#" class="link">Read more <span class="arr">→</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section" style="margin-bottom:120px;">
+    <div class="container">
+
+      <div class="glass" style="padding:26px" data-aos="fade-up">
+        <div class="grid" style="grid-template-columns:1.2fr .8fr; gap:20px">
+
+          <!-- Contact Form -->
+          <div>
+            <h2 class="heading-lg">Let’s grow your revenue</h2>
+            <p class="muted">Tell us about your goals. We’ll reply within 1 business day.</p>
+
+            <form id="contactForm" class="grid" style="grid-template-columns:1fr 1fr; gap:14px; margin-top:12px">
+
+              <input required name="name" placeholder="Full name" style="padding:14px;border-radius:12px;background:#fff;color:#1e293b;border:1px solid #ddd;" />
+
+              <input required name="email" type="email" placeholder="Work email" style="padding:14px;border-radius:12px;background:#fff;color:#1e293b;border:1px solid #ddd;" />
+
+              <input name="company" placeholder="Company" style="grid-column:1/-1;padding:14px;border-radius:12px;background:#fff;color:#1e293b;border:1px solid #ddd;" />
+
+              <select name="type" style="padding:14px;border-radius:12px;background:#fff;color:#1e293b;border:1px solid #ddd;">
+                <option value="Publisher">Publisher</option>
+                <option value="Advertiser">Advertiser</option>
+                <option value="Agency">Agency</option>
+              </select>
+
+              <select name="budget" style="padding:14px;border-radius:12px;background:#fff;color:#1e293b;border:1px solid #ddd;">
+                <option value="Under $10k/mo">Under $10k/mo</option>
+                <option value="$10k–$50k/mo">$10k–$50k/mo</option>
+                <option value="$50k–$200k/mo">$50k–$200k/mo</option>
+                <option value="$200k+/mo">$200k+/mo</option>
+              </select>
+
+              <textarea name="message" placeholder="What are you trying to achieve?" rows="4" style="grid-column:1/-1;padding:14px;border-radius:12px;background:#fff;color:#1e293b;border:1px solid #ddd;"></textarea>
+
+              <div style="grid-column:1/-1;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+                <button class="btn" type="submit">Send message</button>
+                <span id="formStatus" class="muted" role="status"></span>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Contact Details -->
+          <div class="glass" style="padding:18px">
+            <h3 class="heading-md">Contact</h3>
+            <p class="muted">Email: contact@ansads.com</p>
+            <p class="muted">Phone: +91-00000-00000</p>
+
+            <div style="height:12px"></div>
+
+            <h3 class="heading-md">Office</h3>
+            <p class="muted">123 Advertising Blvd, Marketing City, 45678</p>
+
+            <div style="height:12px"></div>
+
+            <h3 class="heading-md">Social</h3>
+            <p class="muted">LinkedIn · Twitter · YouTube</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="margin-top:60px;">
+    <div class="container">
+      <div class="foot">
+
+        <div>
+          <a href="index.html" class="auth-logo-link">
+          <div class="brand">
+             <div class="logo-box">
+                <img src="images/logo.png" alt="ANS Ads Logo" />
+             </div>
+            <span>ANS Ads</span>
+          </div>
+          <p class="muted" style="margin-top:8px; max-width:520px">
+            We combine creative, media, and analytics — and we stay accountable to outcomes.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="heading-md">Company</h4>
+          <div class="grid" style="gap:8px; margin-top:8px">
+            <a href="#who">About</a>
+            <a href="#blog">Insights</a>
+            <a href="#contact">Careers</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="heading-md">Products</h4>
+          <div class="grid" style="gap:8px; margin-top:8px">
+            <a href="#products">Optimization</a>
+            <a href="#products">Creative</a>
+            <a href="#products">Analytics</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="heading-md">Legal</h4>
+          <div class="grid" style="gap:8px; margin-top:8px">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © <span id="year"></span> ANS Ads. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Libraries -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Your Custom JS (keep this file unchanged) -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
