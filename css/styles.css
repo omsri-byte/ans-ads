@@ -209,9 +209,7 @@ body{
     pointer-events: none;
 }
 
-/* -----------------------------------------------------
-   PARTNERS
------------------------------------------------------- */
+
 /* ====================================
    PARTNERS LOGO STRIP — CLEAN + MODERN
    ==================================== */
@@ -792,7 +790,13 @@ footer{
   .mobile-menu a { display:block; width:100%; }
 
   /* HERO spacing */
-  .hero { min-height: 72vh; padding-top: 28px; }
+   .hero {
+    min-height: 100vh !important;   /* full screen height */
+    padding-bottom: 40px;           /* prevent cut-off */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .heading-xl { font-size: 30px; line-height:1.05; margin-bottom:8px; }
 
   /* PARTNERS */
@@ -1002,3 +1006,100 @@ footer{
     opacity: 0;
     transform: translateX(50px);
 }
+/* ---------- MOBILE RESPONSIVE ---------- */
+@media (max-width: 768px) {
+
+  /* GRID BECOMES 1 COLUMN */
+  .who-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* REMOVE VERTICAL LINE ON MOBILE */
+  .who-wrapper::before {
+    display: none;
+  }
+
+  /* TITLE CENTER & SMALLER */
+  .who-left {
+    justify-content: center;
+    align-items: center;
+  }
+  .who-title br {
+    display: none !important;   /* remove line breaks */
+  }
+
+  .who-title {
+    writing-mode: horizontal-tb !important;
+    transform: none !important;
+    font-size: 34px;
+    text-align: center;
+    white-space: nowrap;        /* force single line */
+    margin: 0 auto;
+    word-spacing: 100px; 
+  }
+}
+
+  /* RIGHT CARD FULL WIDTH */
+  .who-right {    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 16px;
+    gap: 18px;
+  }
+
+  /* IMAGE BOX */
+  .who-image-box {
+    width: 100%;
+    height: 180px;
+  }
+
+  .who-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* STATS — ALIGN CENTER */
+  .who-stats-left,
+  .who-stats-right {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .stat {
+    padding: 10px 12px;
+  }
+
+  .num {
+    font-size: 18px;
+  }
+
+  /* DESCRIPTION FULL WIDTH */
+  .who-desc {
+    grid-column: 1 / span 1;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  /* CONTROLS (timer) CENTER */
+  .who-controls {
+    grid-column: 1 / span 1;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  /* MOBILE ANIMATION TWEAKS */
+  .who-fade-left,
+  .who-fade-right {
+    transform: translateY(30px);
+  }
+  .who-fade-left.show,
+  .who-fade-right.show {
+    transform: translateY(0);
+  }
+
+
+
+
